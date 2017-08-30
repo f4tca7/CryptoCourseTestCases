@@ -131,7 +131,7 @@ public class Assignment3 {
 		block.finalize();
 
 		boolean passes = blockHandler.processBlock(block);
-		printPassFail(1, passes);
+		printPassFail(2, passes);
 		return passes;
 	}
 
@@ -343,7 +343,7 @@ public class Assignment3 {
 			passes = passes && (blockHandler.processBlock(block) == notCorrupted);
 		}
 
-		printPassFail(17, passes);
+		printPassFail(4, passes);
 		return passes;
 	}
 
@@ -353,7 +353,7 @@ public class Assignment3 {
 	 * @return
 	 */
 	public boolean test5() {
-		System.out.println("Test5: Process a new genesis block");
+		System.out.println("Test 5: Process a new genesis block");
 
 		Block genesisBlock = new Block(null, people.get(0).getPublic());
 		genesisBlock.finalize();
@@ -375,7 +375,7 @@ public class Assignment3 {
 	 * @return
 	 */
 	public boolean test6() {
-		System.out.println("Test6: Process a block with an invalid prevBlockHash");
+		System.out.println("Test 6: Process a block with an invalid prevBlockHash");
 
 		Block genesisBlock = new Block(null, people.get(0).getPublic());
 		genesisBlock.finalize();
@@ -389,7 +389,7 @@ public class Assignment3 {
 		block.finalize();
 
 		boolean passes = !blockHandler.processBlock(block);
-		printPassFail(5, passes);
+		printPassFail(6, passes);
 		return passes;
 	}
 
@@ -728,7 +728,7 @@ public class Assignment3 {
 	 */
 	public boolean test13() {
 		System.out.println(
-				"Test13: Process a linear chain of blocks of length CUT_OFF_AGE and then a block on top of the genesis block");
+				"Test 13: Process a linear chain of blocks of length CUT_OFF_AGE and then a block on top of the genesis block");
 
 		Block genesisBlock = new Block(null, people.get(0).getPublic());
 		genesisBlock.finalize();
@@ -895,14 +895,14 @@ public class Assignment3 {
 	}
 
 	/**
-	 * Create a block after a valid transaction has been processed that is already
+	 * Test 18: Create a block after a valid transaction has been processed that is already
 	 * in a block in the longest valid branch
 	 * 
 	 * @return
 	 */
 	public boolean test18() {
 		System.out.println(
-				"Create a block after a valid transaction has been processed that is already in a block in the longest valid branch");
+				"Test 18: Create a block after a valid transaction has been processed that is already in a block in the longest valid branch");
 
 		Block genesisBlock = new Block(null, people.get(0).getPublic());
 		genesisBlock.finalize();
