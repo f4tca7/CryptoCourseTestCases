@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 
-public class Runner {
+public class Assignment3 {
 	private class ForwardBlockNode {
 		public Block b;
 		public ForwardBlockNode child;
@@ -31,7 +31,7 @@ public class Runner {
 
 	public ArrayList<KeyPair> people;
 
-	public Runner() {
+	public Assignment3() {
 		this.nPeople = 20;
 		this.nUTXOTx = 20;
 		this.maxUTXOTxOutput = 20;
@@ -1602,18 +1602,17 @@ public class Runner {
 	}
 
 	public static void main(String[] args) {
-		Runner r = new Runner();
+		Assignment3 runner = new Assignment3();
 		int numSuccess = 0;
 		int numTotal = 27;
 		for(int i = 1; i <= numTotal; i++) {
 			try {
-				boolean success = (boolean)r.getClass().getMethod("test" + Integer.toString(i)).invoke(r);
+				boolean success = (boolean)runner.getClass().getMethod("test" + Integer.toString(i)).invoke(runner);
 				if(success) {
 					numSuccess += 1;
 				}
 			} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException
 					| NoSuchMethodException | SecurityException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}	
